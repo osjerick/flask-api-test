@@ -30,7 +30,7 @@ class SubmitJob(Resource):
         :param text: text string to process
         """
 
-        timestamp = datetime.utcnow().isoformat(' ', 'seconds')
+        timestamp = datetime.utcnow().isoformat(timespec='seconds')
         response = self.sqs_client.send_message(QueueUrl=self.sqs_queue_url,
                                                 MessageBody=json.dumps({'text': text,
                                                                         'timestamp': timestamp},
