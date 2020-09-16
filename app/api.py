@@ -30,13 +30,16 @@ class SubmitJob(Resource):
         :param text: text string to process
         """
 
+        if not text:
+            raise ValueError("`text` shouldn't be empty")
+
         timestamp = datetime.utcnow().isoformat(timespec='seconds')
         response = self.sqs_client.send_message(QueueUrl=self.sqs_queue_url,
                                                 MessageBody=json.dumps({'text': text,
                                                                         'timestamp': timestamp},
                                                                        ensure_ascii=False, encoding='utf8'))
 
-        return {'sqs_message_id': response.get('MessageId')}
+        return {'id': response.get('MessageId')}
 
     # Methods
     def post(self):
