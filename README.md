@@ -24,17 +24,17 @@ Run the script [`build.sh`](./build.sh) to execute the application using Docker 
 The application expects receiving several environment variables from the Docker environment. **When using [`build.sh`](./build.sh), you can define those variables from the host using the same names.**
 
 ### Environment variables
-- `PORT`: The exposed port from the Docker container and to perform the binding with the host. Already defined in [`build.sh`](./build.sh) as the port `5000` through the host environment variable `PORT`.
-- `AWS_ACCESS_KEY_ID`: AWS access key for managing the SQS queue.
-- `AWS_SECRET_ACCESS_KEY`: AWS secret key for managing the SQS queue.
-- `SQS_REGION_NAME`: SQS needs the `region_name` parameter at construction time of the client ([boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html)).
-- `SQS_QUEUE_URL`: SQS URL access.
-- `SPACY_MODEL_NAME`: spaCy model name of the model used to perform the text parsing. Already defined in [`build.sh`](./build.sh) as `en_core_web_sm`, which the only one available from the Docker environment.
-- `GCP_CREDENTIALS`: GCP service account info (service account credentials JSON file content). Preferred to avoid storing the file in repo when building on the cloud.
-- `GCP_CREDENTIALS_FILE`: GCP service account JSON file (useful when working in local). Not used in [`build.sh`](./build.sh).
-- `GCS_OUTPUT_BUCKET`: GCS bucket name for the output report.
-- `GCS_OUTPUT_PREFIX`:  GCS object prefix for the output report.
-- `LOG_LEVEL`: Logging level of the [`app.process`](./app/process.py) task. Default is `ERROR` (this default is also hardcoded in [`build.sh`](./build.sh)). 
+- **`PORT`**: The exposed port from the Docker container and to perform the binding with the host. Already defined in [`build.sh`](./build.sh) as the port `5000` through the host environment variable `PORT`.
+- **`AWS_ACCESS_KEY_ID`**: AWS access key for managing the SQS queue.
+- **`AWS_SECRET_ACCESS_KEY`**: AWS secret key for managing the SQS queue.
+- **`SQS_REGION_NAME`**: SQS needs the `region_name` parameter at construction time of the client ([boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html)).
+- **`SQS_QUEUE_URL`**: SQS URL access.
+- **`SPACY_MODEL_NAME`**: spaCy model name of the model used to perform the text parsing. Already defined in [`build.sh`](./build.sh) as `en_core_web_sm`, which the only one available from the Docker environment.
+- **`GCP_CREDENTIALS`**: GCP service account info (service account credentials JSON file content). Preferred to avoid storing the file in repo when building on the cloud.
+- **`GCP_CREDENTIALS_FILE`**: GCP service account JSON file (useful when working in local). Not used in [`build.sh`](./build.sh).
+- **`GCS_OUTPUT_BUCKET`**: GCS bucket name for the output report.
+- **`GCS_OUTPUT_PREFIX`**:  GCS object prefix for the output report.
+- **`LOG_LEVEL`**: Logging level of the [`app.process`](./app/process.py) task. Default is `ERROR` (this default is also hardcoded in [`build.sh`](./build.sh)). 
 
 ## Endpoints
 - **`/submit`**
