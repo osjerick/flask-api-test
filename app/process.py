@@ -73,15 +73,16 @@ def process_sqs_message(sqs_client,
         logger.info('No messages in queue')
 
 
-def process_text(text: str) -> Dict[str, Dict[str, Union[str, bool]]]:
+def process_text(text: str, spacy_model_name: str = None) -> Dict[str, Dict[str, Union[str, bool]]]:
     """
     Processes text extracting linguistic features from tokens using spacy model.
 
     :param text: text string
+    :param spacy_model_name: spaCy model name
     :return: dictionary of linguistic features per token
     """
 
-    nlp = spacy.load(os.environ['SPACY_MODEL_NAME'])
+    nlp = spacy.load(spacy_model_name or os.environ['SPACY_MODEL_NAME'])
     doc = nlp(text)
     processed_text = dict()
 
