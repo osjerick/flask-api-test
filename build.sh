@@ -13,5 +13,5 @@ docker container run --detach --name api -p ${API_PORT}:${API_PORT} \
   -e GCP_CREDENTIALS="${GCP_CREDENTIALS}" \
   -e GCS_OUTPUT_BUCKET="${GCS_OUTPUT_BUCKET}" \
   -e GCS_OUTPUT_PREFIX="${GCS_OUTPUT_PREFIX}" \
-  -e LOG_LEVEL="${LOG_LEVEL}" \
+  -e LOG_LEVEL="${LOG_LEVEL:-ERROR}" \
   osjerick/api-test:latest
