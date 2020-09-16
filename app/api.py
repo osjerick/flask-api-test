@@ -8,8 +8,8 @@ from flask_restful.reqparse import RequestParser
 import app.utils as utils
 from datetime import datetime
 
-backend = Flask(__name__)
-api = Api(backend)
+flask_app = Flask(__name__)
+api = Api(flask_app)
 
 
 class SubmitJob(Resource):
@@ -42,7 +42,7 @@ class SubmitJob(Resource):
     def post(self):
         args = self.parser.parse_args()
         job_info = self.submit_job_to_sqs(args["text"])
-        backend.logger.info('SQS message sent successfully!')
+        flask_app.logger.info('SQS message sent successfully!')
 
         return {'submitted': True, **job_info}, 201
 
@@ -132,7 +132,7 @@ class SQSMessage(Resource):
         args = self.parser.parse_args()
         self.sqs_client.delete_message(QueueUrl=self.sqs_queue_url,
                                        ReceiptHandle=args['receiptHandle'])
-        backend.logger.info('SQS message deleted successfully!')
+        flask_app.logger.info('SQS message deleted successfully!')
 
         return {'message_deleted': True}
 

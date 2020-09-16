@@ -1,8 +1,5 @@
 FROM python:3.8-slim-buster
 
-RUN apt-get update -y && \
-    apt-get install -y cron
-
 WORKDIR /srv/
 
 COPY ./requirements.txt ./
@@ -14,4 +11,4 @@ COPY . ./
 
 EXPOSE ${PORT}
 
-CMD gunicorn --bind :${PORT} app:backend
+CMD ["./run_backend.sh"]
