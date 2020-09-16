@@ -42,6 +42,7 @@ class SubmitJob(Resource):
     def post(self):
         args = self.parser.parse_args()
         job_info = self.submit_job_to_sqs(args["text"])
+        backend.logger.info('SQS message sent successfully!')
 
         return {'submitted': True, **job_info}, 201
 
@@ -61,6 +62,12 @@ class QueueStatus(Resource):
 
     # Utils
     def get_queue_info(self) -> Dict[str, int]:
+        """
+        Get SQS Queue attributes and API status.
+
+        :return: Dictionary with queue information
+        """
+
         response = self.sqs_client.get_queue_attributes(QueueUrl=self.sqs_queue_url,
                                                         AttributeNames=list(self.sqs_attributes_to_get.keys()))
         attributes = response['Attributes']
@@ -123,8 +130,9 @@ class SQSMessage(Resource):
 
     def delete(self):
         args = self.parser.parse_args()
-        response = self.sqs_client.delete_message(QueueUrl=self.sqs_queue_url,
-                                                  ReceiptHandle=args['receiptHandle'])
+        self.sqs_client.delete_message(QueueUrl=self.sqs_queue_url,
+                                       ReceiptHandle=args['receiptHandle'])
+        backend.logger.info('SQS message deleted successfully!')
 
         return {'message_deleted': True}
 
