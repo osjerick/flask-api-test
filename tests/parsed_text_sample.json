@@ -1,0 +1,185 @@
+{
+  "text": "A man provided with paper, pencil, and rubber, and subject to strict discipline, is in effect a universal machine.",
+  "parsed_text": {
+    "A": {
+      "lemma": "a",
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "shape": "X",
+      "alpha": true,
+      "stop": true
+    },
+    "man": {
+      "lemma": "man",
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "nsubj",
+      "shape": "xxx",
+      "alpha": true,
+      "stop": false
+    },
+    "provided": {
+      "lemma": "provide",
+      "pos": "VERB",
+      "tag": "VBN",
+      "dep": "acl",
+      "shape": "xxxx",
+      "alpha": true,
+      "stop": false
+    },
+    "with": {
+      "lemma": "with",
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "prep",
+      "shape": "xxxx",
+      "alpha": true,
+      "stop": true
+    },
+    "paper": {
+      "lemma": "paper",
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "pobj",
+      "shape": "xxxx",
+      "alpha": true,
+      "stop": false
+    },
+    ",": {
+      "lemma": ",",
+      "pos": "PUNCT",
+      "tag": ",",
+      "dep": "punct",
+      "shape": ",",
+      "alpha": false,
+      "stop": false
+    },
+    "pencil": {
+      "lemma": "pencil",
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "conj",
+      "shape": "xxxx",
+      "alpha": true,
+      "stop": false
+    },
+    "and": {
+      "lemma": "and",
+      "pos": "CCONJ",
+      "tag": "CC",
+      "dep": "cc",
+      "shape": "xxx",
+      "alpha": true,
+      "stop": true
+    },
+    "rubber": {
+      "lemma": "rubber",
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "conj",
+      "shape": "xxxx",
+      "alpha": true,
+      "stop": false
+    },
+    "subject": {
+      "lemma": "subject",
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "shape": "xxxx",
+      "alpha": true,
+      "stop": false
+    },
+    "to": {
+      "lemma": "to",
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "prep",
+      "shape": "xx",
+      "alpha": true,
+      "stop": true
+    },
+    "strict": {
+      "lemma": "strict",
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "shape": "xxxx",
+      "alpha": true,
+      "stop": false
+    },
+    "discipline": {
+      "lemma": "discipline",
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "pobj",
+      "shape": "xxxx",
+      "alpha": true,
+      "stop": false
+    },
+    "is": {
+      "lemma": "be",
+      "pos": "AUX",
+      "tag": "VBZ",
+      "dep": "ROOT",
+      "shape": "xx",
+      "alpha": true,
+      "stop": true
+    },
+    "in": {
+      "lemma": "in",
+      "pos": "ADP",
+      "tag": "IN",
+      "dep": "prep",
+      "shape": "xx",
+      "alpha": true,
+      "stop": true
+    },
+    "effect": {
+      "lemma": "effect",
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "pobj",
+      "shape": "xxxx",
+      "alpha": true,
+      "stop": false
+    },
+    "a": {
+      "lemma": "a",
+      "pos": "DET",
+      "tag": "DT",
+      "dep": "det",
+      "shape": "x",
+      "alpha": true,
+      "stop": true
+    },
+    "universal": {
+      "lemma": "universal",
+      "pos": "ADJ",
+      "tag": "JJ",
+      "dep": "amod",
+      "shape": "xxxx",
+      "alpha": true,
+      "stop": false
+    },
+    "machine": {
+      "lemma": "machine",
+      "pos": "NOUN",
+      "tag": "NN",
+      "dep": "attr",
+      "shape": "xxxx",
+      "alpha": true,
+      "stop": false
+    },
+    ".": {
+      "lemma": ".",
+      "pos": "PUNCT",
+      "tag": ".",
+      "dep": "punct",
+      "shape": ".",
+      "alpha": false,
+      "stop": false
+    }
+  }
+}
